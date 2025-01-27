@@ -1,12 +1,23 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { FieldValues, useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../redux/features/auth/authApi";
+import { useAppDispatch } from "../../redux/features/hooks";
+import { setUser, TUser } from "../../redux/features/auth/authSlice";
+import { verifyToken } from "../../utils/verifyToken";
+import { toast } from "sonner";
 
 //#e67e22
 
 //#d35400
 
+// type TUserInfo = {
+//   email: string;
+//   password: string;
+// };
+
 const Login = () => {
+  const navigate = useNavigate();
+
   const { register, handleSubmit } = useForm({
     defaultValues: {
       email: "admin@example.com",
@@ -14,19 +25,30 @@ const Login = () => {
     },
   });
 
-  const [login, { data, error }] = useLoginMutation();
+  const [login] = useLoginMutation();
 
-  console.log("data=>", data);
-  console.log("error=>", error);
+  const dispatch = useAppDispatch();
 
-  const onSubmit = (data) => {
-    const userInfo = {
-      email: data.email,
-      password: data.password,
-    };
-    login(userInfo);
+  const onSubmit = async (data: FieldValues) => {
+    const toastId = toast.loading("Logging in ...");
+    try {
+      const userInfo = {
+        email: data.email,
+        password: data.password,
+      };
+      const res = await login(userInfo).unwrap();
 
-    console.log(data);
+      const user = verifyToken(res.data.accessToken) as TUser;
+
+      dispatch(setUser({ user: user, token: res.data.accessToken }));
+
+      toast.success("Logged in...", { id: toastId, duration: 2000 });
+
+      navigate(`/`);
+      // navigate(`/${user.role}/dashboard`);
+    } catch (err) {
+      toast.error("Something went wrong...", { id: toastId, duration: 2000 });
+    }
   };
 
   return (
@@ -58,7 +80,6 @@ const Login = () => {
             <input
               className="bg-gray-200 py-2 px-4 w-full mb-2 rounded-lg border-2 border-gray-400"
               type="text"
-              
               {...register("password")}
               id="password"
             />
@@ -70,11 +91,12 @@ const Login = () => {
             </span> */}
           </div>
 
-          <input
+          <button
             className=" bg-[#e67e22] py-2 rounded-lg w-full border-none text-white text-lg mt-6 hover:bg-[#d35400] "
             type="submit"
-            value="Login"
-          />
+          >
+            Login
+          </button>
         </form>
 
         <div className="text-center mt-4 space-y-2">
@@ -89,7 +111,7 @@ const Login = () => {
           </p>
           <p>
             New to this site? Please
-            <Link to="/" className="font-bold ml-2 hover:underline">
+            <Link to="/register" className="font-bold ml-2 hover:underline">
               Register
             </Link>
           </p>

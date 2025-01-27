@@ -7,13 +7,10 @@ import Login from "../pages/Login/Login";
 import { routeGenerator } from "../utils/routesGenerator";
 import { adminPaths } from "./admin.routes";
 import { userPaths } from "./user.routes";
-
+import Register from "../pages/Register/Register";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
+  
 
   {
     path: "/admin",
@@ -23,17 +20,24 @@ const router = createBrowserRouter([
   {
     path: "/customer",
     element: <App />,
-    children:routeGenerator(userPaths),
+    children: routeGenerator(userPaths),
   },
-  
+
   {
-    path: "main",
+    path: "/",
     element: <MainLayout />,
     children: [
-      { path: "home", element: <Home /> },
+      {
+        path: "home",
+        element: <Home />,
+      },
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
       },
     ],
   },

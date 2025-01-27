@@ -1,8 +1,12 @@
 import DashboardLayout from "./components/layout/DashboardLayout";
-
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 function App() {
-  return <DashboardLayout />;
+  return (
+    <ProtectedRoute>
+      <DashboardLayout />;
+    </ProtectedRoute>
+  );
 }
 
 export default App;

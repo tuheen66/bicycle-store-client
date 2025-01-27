@@ -1,5 +1,6 @@
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateBicycle from "../pages/admin/CreateBicycle";
+import GetAllOrders from "../pages/admin/GetAllOrders";
 
 export const adminPaths = [
   {
@@ -11,6 +12,11 @@ export const adminPaths = [
     name: "Create Bicycle",
     path: "create-bicycle",
     element: <CreateBicycle />,
+  },
+  {
+    name: "All Orders",
+    path: "all-orders",
+    element: <GetAllOrders />,
   },
 ];
 
