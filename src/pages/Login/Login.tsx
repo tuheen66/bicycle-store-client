@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FieldValues, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../redux/features/auth/authApi";
@@ -7,7 +8,8 @@ import { verifyToken } from "../../utils/verifyToken";
 import { toast } from "sonner";
 
 //#e67e22
-
+//#0882BB
+//#0984e3
 //#d35400
 
 // type TUserInfo = {
@@ -92,7 +94,7 @@ const Login = () => {
           </div>
 
           <button
-            className=" bg-[#e67e22] py-2 rounded-lg w-full border-none text-white text-lg mt-6 hover:bg-[#d35400] "
+            className="btn bg-[#316881] py-2 rounded-lg w-full border-none text-white text-lg mt-6 hover:bg-[#0d4763] "
             type="submit"
           >
             Login
@@ -100,15 +102,7 @@ const Login = () => {
         </form>
 
         <div className="text-center mt-4 space-y-2">
-          <p className="flex justify-center items-center">
-            Sign In with
-            <span
-              //   onClick={handleGoogleSignIn}
-              className="text-[#eb4d4b] font-bold mx-2 cursor-pointer hover:underline"
-            >
-              {/* <GoogleSignIn></GoogleSignIn> */}
-            </span>
-          </p>
+          
           <p>
             New to this site? Please
             <Link to="/register" className="font-bold ml-2 hover:underline">

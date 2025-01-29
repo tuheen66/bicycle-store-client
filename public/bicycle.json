@@ -1,0 +1,148 @@
+[
+  {
+    "id": "1",
+    "name": "TrailBlazer Mountain Bike",
+    "image": "https://i.ibb.co.com/6sYrbkG/trail-blazer.jpg",
+    "brand": "AdventureWorks",
+    "price": 799.99,
+    "type": "Mountain",
+    "model": "TB-100",
+    "description": "Designed for rugged terrains, this bike ensures smooth rides with a sturdy frame, advanced suspension, and premium tires. Ideal for mountain trails.",
+    "quantity": 15,
+    "inStock": true
+  },
+  {
+    "id": "2",
+    "name": "Speedster Road Bike",
+    "image": "https://i.ibb.co.com/BnYpDsd/speedster.jpg",
+    "brand": "Cyclone",
+    "price": 1299.99,
+    "type": "Road",
+    "model": "SP-200",
+    "description": "Perfect for long road trips, this bike combines lightweight materials, aerodynamic design, and high-performance gearing for maximum speed.",
+    "quantity": 10,
+    "inStock": true
+  },
+  {
+    "id": "3",
+    "name": "Urban Cruiser Hybrid",
+    "image": "https://i.ibb.co.com/6myfxG7/urban-cruiser.jpg",
+    "brand": "CityRider",
+    "price": 599.99,
+    "type": "Hybrid",
+    "model": "UC-300",
+    "description": "A versatile bike for both city commutes and casual trails, featuring a comfortable seat, ergonomic handlebars, and durable tires.",
+    "quantity": 20,
+    "inStock": true
+  },
+  {
+    "id": "4",
+    "name": "Xtreme BMX Pro",
+    "image": "https://i.ibb.co.com/0yJ9FYV/Xtream.jpg",
+    "brand": "Airborne",
+    "price": 499.99,
+    "type": "BMX",
+    "model": "XB-400",
+    "description": "Built for stunts and tricks, this BMX bike has a robust frame, responsive brakes, and durable wheels for extreme adventures.",
+    "quantity": 12,
+    "inStock": true
+  },
+  {
+    "id": "5",
+    "name": "E-Rider Electric Bike",
+    "image": "https://i.ibb.co.com/4NN2K6D/e-rider.jpg",
+    "brand": "VoltPro",
+    "price": 1499.99,
+    "type": "Electric",
+    "model": "ER-500",
+    "description": "Experience effortless rides with this electric bike featuring a powerful motor, long-lasting battery, and multiple speed settings.",
+    "quantity": 8,
+    "inStock": true
+  },
+  {
+    "id": "6",
+    "name": "RoadRunner 500",
+    "image": "https://i.ibb.co.com/sRDJsMk/road-runner.jpg",
+    "brand": "SwiftCycle",
+    "price": 999.99,
+    "type": "Road",
+    "model": "RR-700",
+    "description": "Combining speed and comfort, this road bike has a sleek frame, lightweight components, and high-quality tires for smooth journeys.",
+    "quantity": 14,
+    "inStock": true
+  },
+
+  {
+    "id": "7",
+    "name": "Trail Master Mountain Bike",
+    "image": "https://i.ibb.co.com/NNgzHs5/trail-master.jpg",
+    "brand": "PeakGear",
+    "price": 899.99,
+    "type": "Mountain",
+    "model": "TM-600",
+    "description": "Engineered for off-road performance, this bike features a tough frame, precision gearing, and excellent shock absorption for tough trails.",
+    "quantity": 18,
+    "inStock": true
+  },
+
+  {
+    "id": "8",
+    "name": "City Escape Hybrid",
+    "image": "https://i.ibb.co.com/59PG5hZ/city-escape.jpg",
+    "brand": "Urban Flow",
+    "price": 650,
+    "type": "Hybrid",
+    "model": "CE-800",
+    "description": "A perfect mix of road and trail features, this hybrid bike ensures versatility and comfort for all types of riders.",
+    "quantity": 22,
+    "inStock": true
+  },
+  {
+    "id": "9",
+    "name": "StuntPro BMX",
+    "image": "https://i.ibb.co.com/TbBKNZ3/stunt-pro.jpg",
+    "brand": "Radical Rides",
+    "price": 530,
+    "type": "BMX",
+    "model": "SP-900",
+    "description": "Designed for freestyle tricks, this BMX bike features a strong frame, stable handling, and durable tires for every stunt enthusiast.",
+    "quantity": 10,
+    "inStock": true
+  },
+  {
+    "id": "10",
+    "name": "VoltTrail Electric Bike",
+    "image": "https://i.ibb.co.com/WGPpJ15/voltrail.jpg",
+    "brand": "PowerRide",
+    "price": 180,
+    "type": "Electric",
+    "model": "VT-1000",
+    "description": "Powerful and efficient, this electric bike features a high-capacity battery, smart controls, and premium comfort for long journeys.",
+    "quantity": 5,
+    "inStock": true
+  },
+  {
+    "id": "11",
+    "name": "Alpine Cruiser Mountain Bike",
+    "image": "https://i.ibb.co.com/ymCvLf6/alpine.jpg",
+    "brand": "HighPeak",
+    "price": 750,
+    "type": "Mountain",
+    "model": "AC-1100",
+    "description": "Conquer steep trails effortlessly with this bike's robust design, superior suspension, and excellent traction for mountain adventures.",
+    "quantity": 25,
+    "inStock": true
+  },
+  {
+    "id": "12",
+    "name": "SprintMax Road Bike",
+    "image": "https://i.ibb.co.com/SxYdr7j/sprint.jpg",
+    "brand": "QuickGear",
+    "price": 1200,
+    "type": "Road",
+    "model": "SM-1200",
+    "description": "Built for speed enthusiasts, this road bike features a lightweight frame, advanced braking system, and aerodynamic design.",
+    "quantity": 11,
+    "inStock": true
+  }
+]

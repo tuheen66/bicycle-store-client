@@ -7,16 +7,16 @@ import Sidebar from "./Sidebar";
 
 const DashboardLayout = () => {
   return (
-    <Layout className="h-screen">
+    <Layout className="min-h-screen">
       <Sidebar />
       <Layout>
-        <Header style={{ padding: 0 }}></Header>
-        <Content style={{ margin: "24px 16px 10px" }}>
-          <div className="border-2 border-red-200 "
+        <Header></Header>
+
+        <Content style={{ margin: "24px 16px 0" }}>
+          <div
             style={{
               padding: 24,
-              minHeight:360
-              
+              minHeight: 360,
             }}
           >
             <Outlet />

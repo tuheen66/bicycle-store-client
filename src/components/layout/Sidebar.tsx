@@ -35,9 +35,10 @@ const Sidebar = () => {
   };
 
   return (
-    <Sider breakpoint="lg" collapsedWidth="0" className="h-[100%]">
-      <div className=" text-center text-2xl font-bold my-4 text-white">
-        <h1>Bicycle Store</h1>
+    <Sider breakpoint="lg" collapsedWidth="0">
+      {/* <div className="demo-logo-vertical" /> */}
+      <div className="flex justify-center ">
+        <h1 className="text-3xl font-semibold text-white my-4"> Bicycle Hub</h1>
       </div>
       <Menu
         theme="dark"
@@ -45,26 +46,26 @@ const Sidebar = () => {
         defaultSelectedKeys={["4"]}
         items={sidebarItems}
       />
-      <div className="border-b-2 mx-2 border-gray-700"></div>
-      <div className="  mx-2  ">
-        <Link to="/login">
-          <button className="btn btn-sm bg-[#e67e22] py-1 rounded-lg w-full border-none text-[#001529] text-md font-semibold mt-6 hover:bg-[#d35400] ">
-            Login
-          </button>
-        </Link>
-        <Link to="/login">
-          <button
-            onClick={handleLogout}
-            className="btn btn-sm bg-[#e67e22] py-1 rounded-lg w-full border-none text-[#001529] text-md font-semibold mt-6 hover:bg-[#d35400] "
-          >
-            Logout
-          </button>
-        </Link>
-        <Link to="/home">
-          <button className=" btn btn-sm bg-[#e67e22] py-1 rounded-lg w-full border-none text-[#001529] text-md font-semibold mt-6 hover:bg-[#d35400] ">
+      <div className="border-b-2 border-gray-600 mx-2 my-4 "></div>
+      <div className="mx-2 mt-4 ">
+        <Link to="/">
+          <button className=" text-white bg-[#1677FF] w-full py-2 rounded-lg mb-4">
             Home
           </button>
         </Link>
+
+        <Link to="/login">
+          <button className=" text-white bg-[#1677FF] w-full py-2 rounded-lg mb-4">
+            Login
+          </button>
+        </Link>
+
+        <button
+          onClick={handleLogout}
+          className=" text-white bg-[#1677FF] w-full py-2 rounded-lg"
+        >
+          Logout
+        </button>
       </div>
     </Sider>
   );

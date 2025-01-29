@@ -1,7 +1,17 @@
+import Banner from "../../components/banner/Banner";
+import Community from "../../components/community/Community";
+import FeaturedBicycles from "../../components/featuredBicycles/FeaturedBicycles";
+import Services from "../../components/services/Services";
+import SustainableCycling from "../../components/sustainableCycling/SustainableCycling";
+
 const Home = () => {
   return (
     <div>
-      <h1>Home component page </h1>
+      <Banner />
+      <FeaturedBicycles />
+      <Services/>
+      <Community/>
+      <SustainableCycling/>
     </div>
   );
 };

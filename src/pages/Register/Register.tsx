@@ -63,7 +63,7 @@ const Register = () => {
       {/* <Helmet>
         <title>Heartsync | Register</title>
       </Helmet> */}
-      <div className=" lg:w-[50%] bg-purple-200 p-8  mx-auto text-gray-700 my-8 rounded-lg">
+      <div className=" lg:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
         <h2 className="text-center text-3xl font-bold">Please Register</h2>
 
         <form
@@ -118,7 +118,7 @@ const Register = () => {
 
           <button
             onClick={handleSubmit(onSubmit)}
-            className="btn  bg-[#a9106b] py-2 w-full border-none text-lg mt-6 text-white rounded-lg hover:bg-[#30336b] "
+            className="btn  bg-[#316881] py-2 w-full border-none text-lg mt-6 text-white rounded-lg hover:bg-[#0d4763] "
             type="submit"
           >
             Register
