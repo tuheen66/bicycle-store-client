@@ -6,7 +6,7 @@ interface BicycleCardProps {
 }
 
 const BicycleCard: React.FC<BicycleCardProps> = ({ item }) => {
-  console.log({ item });
+ 
 
   return (
     <div className="card bg-base-300 shadow-xl shadow-gray-500 border">

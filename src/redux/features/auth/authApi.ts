@@ -9,7 +9,22 @@ const authApi = baseApi.injectEndpoints({
         body: userInfo,
       }),
     }),
+
+    getCustomerProfile: builder.query({
+      query: (email) => ({
+        url: `/auth/profile/${email}`,
+        method: "GET",
+      }),
+    }),
+
+    changePassword: builder.mutation({
+      query: (data) => ({
+        url: '/auth/change-password',
+        method: 'POST',
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = authApi;
+export const { useLoginMutation, useGetCustomerProfileQuery, useChangePasswordMutation } = authApi;

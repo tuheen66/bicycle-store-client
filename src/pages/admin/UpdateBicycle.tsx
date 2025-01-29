@@ -2,20 +2,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { SubmitHandler, useForm } from "react-hook-form";
 import {
+ 
   useGetSingleBicyclesQuery,
   useUpdateBicyclesMutation,
 } from "../../redux/features/products/productsApi";
 import { toast } from "sonner";
 import { TBicycle, TResponse } from "../../redux/types/global";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const UpdateBicycle = () => {
   const { id } = useParams();
 
+  const navigate=useNavigate()
+
   const { data: bicycle } = useGetSingleBicyclesQuery(id);
 
   const [updateBicycle] = useUpdateBicyclesMutation();
+
+
 
   const { register, handleSubmit, setValue, reset } = useForm<TBicycle>();
 
@@ -35,7 +40,7 @@ const UpdateBicycle = () => {
         data: {
           price: data.price,
           quantity: data.quantity,
-          // Add other fields as needed
+          
         },
       };
 
@@ -46,11 +51,15 @@ const UpdateBicycle = () => {
       } else {
         toast.success("Bicycle updated", { id: toastId });
         reset(); // Reset the form after successful submission
+        navigate('/admin/allBicycle')
       }
     } catch (err) {
       toast.error("Something went wrong", { id: toastId });
     }
   };
+
+
+ 
 
   return (
     <div className="bg-gray-200 w-[60%] mx-auto px-4 py-8 rounded-lg">

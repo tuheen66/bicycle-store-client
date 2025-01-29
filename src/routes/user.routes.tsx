@@ -1,14 +1,14 @@
-import CreateOrder from "../pages/user/CreateOrder";
+import CreateOrder from "../pages/user/CustomerOrders";
 import UserDashboard from "../pages/user/UserDashboard";
 
 export const userPaths = [
   {
     name: "User Dashboard",
-    path: "user-dashboard",
+    path: "dashboard",
     element: <UserDashboard />,
   },
   {
-    name: "Create Order",
+    name: "My Orders",
     path: "create-order",
     element: <CreateOrder />,
   },

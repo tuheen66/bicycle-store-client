@@ -14,8 +14,9 @@ const productsApi = baseApi.injectEndpoints({
       query: () => ({
         url: "/products",
         method: "GET",
-        invalidatesTags:['bicycles']
+        
       }),
+      providesTags:['bicycles']
     }),
 
     getSingleBicycles: builder.query({
@@ -35,6 +36,14 @@ const productsApi = baseApi.injectEndpoints({
       invalidatesTags:['bicycles']
     }),
 
+    deleteBicycle: builder.mutation({
+      query: (id) => ({
+        url: `/products/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['bicycles'],
+    }),
+
   }),
 });
 
@@ -42,5 +51,6 @@ export const {
   useCreateBicyclesMutation,
   useGetAllBicyclesQuery,
   useGetSingleBicyclesQuery,
-  useUpdateBicyclesMutation
+  useUpdateBicyclesMutation,
+  useDeleteBicycleMutation
 } = productsApi;

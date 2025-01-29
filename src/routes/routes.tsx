@@ -11,6 +11,8 @@ import AllBicycles from "../pages/allBicycles/AllBicycles";
 import Contacts from "../pages/contacts/Contacts";
 import SingleBicycle from "../pages/singleBicycle/SingleBicycle";
 import About from "../pages/about/About";
+import Checkout from "../pages/checkout/Checkout";
+import ChangePassword from "../pages/user/ChangePassword";
 
 const router = createBrowserRouter([
   
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
         element: <SingleBicycle />,
       },
       {
+        path: "checkout/:id",
+        element: <Checkout />,
+      },
+      {
         path: "about",
         element: <About />,
       },
@@ -53,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "change-password",
+        element: <ChangePassword />,
       },
       {
         path: "register",

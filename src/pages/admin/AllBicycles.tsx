@@ -1,11 +1,42 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Link } from "react-router-dom";
-import { useGetAllBicyclesQuery } from "../../redux/features/products/productsApi";
+import {
+  useDeleteBicycleMutation,
+  useGetAllBicyclesQuery,
+} from "../../redux/features/products/productsApi";
 import { TBicycle } from "../../redux/types/global";
+import { toast } from "sonner";
 
 const AllBicycles = () => {
   const { data: bicycles } = useGetAllBicyclesQuery(undefined);
+  const [deleteBicycle] = useDeleteBicycleMutation();
 
   console.log(bicycles?.data);
+
+ 
+
+  const handleDeleteBicycle = async (id: string) => {
+    try {
+      const res = await deleteBicycle(id);
+      if (res.error) {
+        if ("data" in res.error) {
+          toast.error((res.error as any).data.message);
+        } else {
+          toast.error("An error occurred");
+        }
+      } else {
+        toast("Bicycle deleted", {
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
+        });
+      }
+    } catch (err) {
+      toast.error("Something went wrong");
+    }
+  };
 
   return (
     <div>
@@ -13,7 +44,7 @@ const AllBicycles = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr >
+            <tr>
               <th>SL</th>
               <th>Image</th>
               <th>Name</th>
@@ -46,13 +77,16 @@ const AllBicycles = () => {
                 <td>{item.quantity}</td>
                 <td>{item.price}</td>
                 <td>
-                  <div className="btn-group btn-group-vertical">
+                  <div className=" flex flex-col">
                     <Link to={`/admin/updateBicycle/${item._id}`}>
-                    <button className="btn btn-sm bg-green-500 text-white">
-                      Update
-                    </button>
+                      <button className="btn btn-sm bg-green-700 text-white w-full">
+                        Update
+                      </button>
                     </Link>
-                    <button className="btn btn-sm bg-red-500 text-white">
+                    <button
+                      onClick={() => handleDeleteBicycle(item._id)}
+                      className="btn btn-sm bg-red-600 text-white rounded-lg"
+                    >
                       Delete
                     </button>
                   </div>

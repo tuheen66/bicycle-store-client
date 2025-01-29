@@ -22,7 +22,7 @@ const FeaturedBicycles = () => {
     <p>Loading....</p>;
   }
 
-  console.log(bicycles);
+ 
 
   const featuredBicycles = (bicycles?.data ?? []).slice(0, 6);
 

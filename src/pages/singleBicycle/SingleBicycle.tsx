@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetSingleBicyclesQuery } from "../../redux/features/products/productsApi";
 
 const SingleBicycle = () => {
@@ -29,7 +29,7 @@ const SingleBicycle = () => {
           />
         </div>
 
-        <div className="  flex justify-center flex-col gap-8 flex-1 py-8">
+        <div className="  flex justify-center flex-col gap-4 flex-1 py-8">
           <p>
             <span className="font-semibold text-xl">Brand : </span>
             {bicycle.data.brand}
@@ -51,9 +51,11 @@ const SingleBicycle = () => {
             {bicycle.data.description}
           </p>
           <div className=" ">
+            <Link to={`/checkout/${bicycle.data._id}`}>
             <button className="btn bg-[#316881] py-2 rounded-lg w-full border-none text-white text-lg mt-6 hover:bg-[#0d4763] ">
               Buy Now
             </button>
+            </Link>
           </div>
         </div>
       </div>

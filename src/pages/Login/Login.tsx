@@ -22,8 +22,11 @@ const Login = () => {
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      email: "admin@example.com",
-      password: "admin123",
+      // email: "admin@example.com",
+      // password: "admin123",
+
+      email: "user2@example.com",
+      password: "user123",
     },
   });
 
