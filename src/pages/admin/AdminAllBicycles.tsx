@@ -8,7 +8,8 @@ import {
 import { TBicycle } from "../../redux/types/global";
 import { toast } from "sonner";
 
-const AllBicycles = () => {
+const AdminAllBicycles
+ = () => {
   const { data: bicycles } = useGetAllBicyclesQuery(undefined);
   const [deleteBicycle] = useDeleteBicycleMutation();
 
@@ -100,4 +101,5 @@ const AllBicycles = () => {
   );
 };
 
-export default AllBicycles;
+export default AdminAllBicycles
+;
