@@ -11,12 +11,13 @@ import AllBicycles from "../pages/allBicycles/AllBicycles";
 import Contacts from "../pages/contacts/Contacts";
 import SingleBicycle from "../pages/singleBicycle/SingleBicycle";
 import About from "../pages/about/About";
-import Checkout from "../pages/checkout/Checkout";
+
 import ChangePassword from "../pages/user/ChangePassword";
+import CheckoutForm from "../pages/checkout/CheckoutForm";
+import Checkout from "../pages/checkout/Checkout";
+
 
 const router = createBrowserRouter([
-  
-
   {
     path: "/admin",
     element: <App />,
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
         element: <SingleBicycle />,
       },
       {
-        path: "checkout/:id",
+        path: "checkout-form/:id",
+        element: <CheckoutForm />,
+      },
+      {
+        path: "checkout",
         element: <Checkout />,
       },
       {

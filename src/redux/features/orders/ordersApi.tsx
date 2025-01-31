@@ -7,7 +7,7 @@ const ordersApi = baseApi.injectEndpoints({
         url: "/orders",
         method: "GET",
       }),
-      providesTags:['orders']
+      providesTags: ["orders"],
     }),
 
     getCustomerOrders: builder.query({
@@ -21,19 +21,32 @@ const ordersApi = baseApi.injectEndpoints({
       query: (data) => ({
         url: "/orders",
         method: "POST",
-        body:data
+        body: data,
       }),
     }),
 
     deleteOrder: builder.mutation({
       query: (id) => ({
         url: `/orders/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
-      invalidatesTags: ['orders'],
+      invalidatesTags: ["orders"],
     }),
 
+    payment: builder.mutation({
+      query: () => ({
+        url: "/orders/payment/create-payment-intent",
+        method: "POST",
+        
+      }),
+    }),
   }),
 });
 
-export const { useGetAllOrdersQuery, useCreateOderMutation, useGetCustomerOrdersQuery, useDeleteOrderMutation } = ordersApi;
+export const {
+  useGetAllOrdersQuery,
+  useCreateOderMutation,
+  useGetCustomerOrdersQuery,
+  useDeleteOrderMutation,
+  usePaymentMutation,
+} = ordersApi;

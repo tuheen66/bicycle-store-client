@@ -38,7 +38,7 @@ const GetAllOrders = () => {
   };
 
   return (
-    <div className="w-[70%] mx-auto">
+    <div className="md:w-[70%] mx-auto">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

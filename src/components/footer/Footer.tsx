@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="lg:flex  md:justify-between">
           <div className="mb-6 ">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href="https://github.com/tuheen66" className="flex items-center">
               <img src={logo} className="h-36 me-3" alt="FlowBite Logo" />
               <p className="text-lg">
 
@@ -25,8 +25,8 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500  font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
-                    Flowbite
+                  <a href="https://daisyui.com/" className="hover:underline">
+                    Daisy UI
                   </a>
                 </li>
                 <li>
@@ -43,7 +43,7 @@ const Footer = () => {
               <ul className="text-gray-500  font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/themesberg/flowbite"
+                    href="https://github.com/tuheen66"
                     className="hover:underline "
                   >
                     Github
@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-700 sm:text-center ">
             © 2025
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="https://github.com/tuheen66" className="hover:underline">
               Cycle Hub
             </a>
             . All Rights Reserved.

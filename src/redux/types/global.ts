@@ -9,6 +9,8 @@ enum typeEnum {
 }
 
 export type TBicycle = {
+  customer?:string,
+  email?:string,
   _id: string;
   name: string;
   image: string;

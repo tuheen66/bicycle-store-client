@@ -37,17 +37,19 @@ const CreateBicycle = () => {
   };
 
   return (
-    <div className="bg-gray-200 w-[60%] mx-auto px-4 py-8 rounded-lg">
+    <div 
+    style={{}}
+    className="bg-gray-300 w-full md:w-[100%]  lg:w-[60%] mx-auto md:px-10 lg:px-4 py-4 rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)} className="">
         {/* name and brand row */}
-        <div className="flex justify-center items-center gap-8">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
           <div className="flex flex-col gap-2">
             <label className="" htmlFor="name">
               Name
             </label>
             <input
               type="text"
-              className="p-2 w-72 rounded-lg "
+              className="px-2 py-1 w-72 rounded-lg "
               id="name"
               {...register("name")}
             />
@@ -57,7 +59,7 @@ const CreateBicycle = () => {
             <label htmlFor="brand">Brand</label>
             <input
               type="text"
-              className="p-2 w-72 rounded-lg"
+              className="px-2 py-1  w-72 rounded-lg"
               id="brand"
               {...register("brand")}
             />
@@ -65,14 +67,14 @@ const CreateBicycle = () => {
         </div>
 
         {/* image */}
-        <div className=" gap-8 mt-4">
+        <div className=" gap-8 mt-2 mx-6 md:mx-0">
           <div className="flex flex-col gap-2">
             <label className="" htmlFor="image">
               Product Image
             </label>
             <input
               type="text"
-              className="p-2 w-full rounded-lg"
+              className="px-2 py-1  w-full rounded-lg"
               id="image"
               {...register("image")}
             />
@@ -81,14 +83,14 @@ const CreateBicycle = () => {
 
         {/* price and quantity row */}
 
-        <div className="flex justify-center items-center gap-8 mt-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2">
           <div className="flex flex-col gap-2">
             <label className="" htmlFor="price">
               Price
             </label>
             <input
               type="number"
-              className="p-2 w-72 rounded-lg"
+              className="px-2 py-1 w-72 rounded-lg"
               id="price"
               {...register("price")}
             />
@@ -98,7 +100,7 @@ const CreateBicycle = () => {
             <label htmlFor="quantity">Quantity</label>
             <input
               type="number"
-              className="p-2 w-72 rounded-lg"
+              className="px-2 py-1 w-72 rounded-lg"
               id="quantity"
               {...register("quantity")}
             />
@@ -107,10 +109,10 @@ const CreateBicycle = () => {
 
         {/* type and model row */}
 
-        <div className="flex justify-center items-center gap-8 mt-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2">
           <div className="flex flex-col gap-2">
             <label>Category</label>
-            <select {...register("type")} className="p-2 w-72 rounded-lg">
+            <select {...register("type")} className="px-2 py-1 w-72 rounded-lg">
               <option value="Mountain">Mountain</option>
               <option value="Road">Road</option>
               <option value="Hybrid">Hybrid</option>
@@ -123,7 +125,7 @@ const CreateBicycle = () => {
             <label htmlFor="model">Model</label>
             <input
               type="text"
-              className="p-2 w-72 rounded-lg"
+              className="px-2 py-1 w-72 rounded-lg"
               id="model"
               {...register("model")}
             />
@@ -131,7 +133,7 @@ const CreateBicycle = () => {
         </div>
 
         {/* text area */}
-        <div className="  mt-4">
+        <div className="  mt-2 mx-6 md:mx-0">
           <div className="flex flex-col gap-2">
             <label htmlFor="description">Description</label>
             <textarea
@@ -142,10 +144,10 @@ const CreateBicycle = () => {
           </div>
         </div>
         <button
-          className="btn bg-[#316881] py-2 rounded-lg w-full border-none text-white  mt-6 hover:bg-[#0d4763] "
+          className=" bg-[#316881] px-2 py-2 rounded-lg w-full border-none text-white font-semibold  mt-6 hover:bg-[#0d4763] "
           type="submit"
         >
-          submit
+          SUBMIT
         </button>
       </form>
     </div>

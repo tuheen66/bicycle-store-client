@@ -4,7 +4,6 @@ import { useGetSingleBicyclesQuery } from "../../redux/features/products/product
 const SingleBicycle = () => {
   const { id } = useParams();
   const { data: bicycle, isLoading, error } = useGetSingleBicyclesQuery(id);
-  console.log(bicycle?.data);
 
   if (isLoading) {
     return <span className="loading loading-bars loading-lg"></span>;
@@ -12,8 +11,6 @@ const SingleBicycle = () => {
   if (error) {
     return <p>Error loading bicycle details: </p>;
   }
-
-  console.log(bicycle);
 
   return (
     <div className="w-[90%] mx-auto mb-8">
@@ -51,10 +48,10 @@ const SingleBicycle = () => {
             {bicycle.data.description}
           </p>
           <div className=" ">
-            <Link to={`/checkout/${bicycle.data._id}`}>
-            <button className="btn bg-[#316881] py-2 rounded-lg w-full border-none text-white text-lg mt-6 hover:bg-[#0d4763] ">
-              Buy Now
-            </button>
+            <Link to={`/checkout-form/${bicycle.data._id}`}>
+              <button className="btn bg-[#316881] py-2 rounded-lg w-full border-none text-white text-lg mt-6 hover:bg-[#0d4763] ">
+                Buy Now
+              </button>
             </Link>
           </div>
         </div>
