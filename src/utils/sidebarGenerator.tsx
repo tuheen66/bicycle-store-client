@@ -7,7 +7,7 @@ type TDashboardRoute = {
 };
 
 type TUserPaths = {
-  name: string;
+  name?: string;
   path: string;
   element: ReactNode;
 };

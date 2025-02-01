@@ -23,8 +23,7 @@ export type TResponse<T> = {
 };
 
 const Register = () => {
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -54,7 +53,7 @@ const Register = () => {
         toast.error(res.error.data.message, { id: toastId });
       } else {
         toast.success("User Registered", { id: toastId });
-        navigate('/login')
+        navigate("/login");
       }
     } catch (err) {
       toast.error("Something went wrong", { id: toastId });
@@ -63,9 +62,6 @@ const Register = () => {
 
   return (
     <div className=" w-[80%] mx-auto items-center justify-center">
-      {/* <Helmet>
-        <title>Heartsync | Register</title>
-      </Helmet> */}
       <div className=" md:w-[70%] lg:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
         <h2 className="text-center text-3xl font-bold">Please Register</h2>
 

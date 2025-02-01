@@ -3,8 +3,8 @@ import { sidebarGenerator } from "../../utils/sidebarGenerator";
 import { adminPaths } from "../../routes/admin.routes";
 import { userPaths } from "../../routes/user.routes";
 import { Link } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../redux/features/hooks";
-import { logout, useCurrentUser } from "../../redux/features/auth/authSlice";
+import { useAppSelector } from "../../redux/features/hooks";
+import { useCurrentUser } from "../../redux/features/auth/authSlice";
 const { Sider } = Layout;
 
 const userRole = {
@@ -13,8 +13,6 @@ const userRole = {
 };
 
 const Sidebar = () => {
-  const dispatch = useAppDispatch();
-
   const user = useAppSelector(useCurrentUser);
 
   let sidebarItems;
@@ -29,10 +27,6 @@ const Sidebar = () => {
     default:
       break;
   }
-
-  const handleLogout = () => {
-    dispatch(logout());
-  };
 
   return (
     <Sider breakpoint="lg" collapsedWidth="0">
@@ -53,19 +47,6 @@ const Sidebar = () => {
             Home
           </button>
         </Link>
-
-        <Link to="/login">
-          <button className=" text-white bg-[#1677FF] w-full py-2 rounded-lg mb-4">
-            Login
-          </button>
-        </Link>
-
-        <button
-          onClick={handleLogout}
-          className=" text-white bg-[#1677FF] w-full py-2 rounded-lg"
-        >
-          Logout
-        </button>
       </div>
     </Sider>
   );

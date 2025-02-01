@@ -15,7 +15,7 @@ import About from "../pages/about/About";
 import ChangePassword from "../pages/user/ChangePassword";
 import CheckoutForm from "../pages/checkout/CheckoutForm";
 import Checkout from "../pages/checkout/Checkout";
-
+import ProtectedRoute from "../components/layout/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +47,11 @@ const router = createBrowserRouter([
       },
       {
         path: "checkout-form/:id",
-        element: <CheckoutForm />,
+        element: (
+          <ProtectedRoute>
+            <CheckoutForm />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "checkout",

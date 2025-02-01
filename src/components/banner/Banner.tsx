@@ -25,7 +25,7 @@ import slider5 from "../../assets/images/banner/banner05.jpg";
 
 const Banner = () => {
   return (
-    <div className=" w-[90%] mx-auto">
+    <div className=" w-[90%] mx-auto rounded-lg">
       <Swiper
         className="mySwiper "
         // install Swiper modules
@@ -39,19 +39,19 @@ const Banner = () => {
         scrollbar={{ draggable: true }}
       >
         <SwiperSlide>
-          <img src={slider1} className="w-full" />
+          <img src={slider1} className="w-full rounded-lg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slider2} className="w-full" />
+          <img src={slider2} className="w-full rounded-lg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slider3} className="w-full" />
+          <img src={slider3} className="w-full rounded-lg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slider4} className="w-full" />
+          <img src={slider4} className="w-full rounded-lg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slider5} className="w-full" />
+          <img src={slider5} className="w-full rounded-lg" />
         </SwiperSlide>
       </Swiper>
     </div>

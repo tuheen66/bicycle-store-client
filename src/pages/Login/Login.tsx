@@ -7,28 +7,13 @@ import { setUser, TUser } from "../../redux/features/auth/authSlice";
 import { verifyToken } from "../../utils/verifyToken";
 import { toast } from "sonner";
 
-//#e67e22
-//#0882BB
-//#0984e3
-//#d35400
-
-// type TUserInfo = {
-//   email: string;
-//   password: string;
-// };
-
 const Login = () => {
   const navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-      // email: "admin@example.com",
-      // password: "admin123",
-
-      email: "user2@example.com",
-      password: "user123",
-    },
-  });
+  const { register, handleSubmit } = useForm<{
+    email: string;
+    password: string;
+  }>();
 
   const [login] = useLoginMutation();
 
@@ -49,8 +34,7 @@ const Login = () => {
 
       toast.success("Logged in...", { id: toastId, duration: 2000 });
 
-      navigate(`/`);
-      // navigate(`/${user.role}/dashboard`);
+      navigate(`/${user.role}/dashboard`);
     } catch (err) {
       toast.error("Something went wrong...", { id: toastId, duration: 2000 });
     }
@@ -58,9 +42,7 @@ const Login = () => {
 
   return (
     <div className="flex w-[80%] mx-auto items-center ">
-      {/* <Helmet>
-        <title>Heartsync | Login</title>
-      </Helmet> */}
+      
       <div className=" lg:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
         <h2 className="text-center text-3xl font-bold">Please Login</h2>
 
@@ -105,7 +87,6 @@ const Login = () => {
         </form>
 
         <div className="text-center mt-4 space-y-2">
-          
           <p>
             New to this site? Please
             <Link to="/register" className="font-bold ml-2 hover:underline">
