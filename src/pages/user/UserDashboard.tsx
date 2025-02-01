@@ -10,7 +10,7 @@ const UserDashboard = () => {
 
 
   return (
-    <div>
+    <div className="flex justify-center">
       <div className="card w-96  bg-gray-300 text-gray-800">
         <div className="card-body text-center">
           <h2 className="text-2xl font-bold">Name: {profile?.data[0].name}</h2>

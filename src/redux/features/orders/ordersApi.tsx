@@ -34,10 +34,10 @@ const ordersApi = baseApi.injectEndpoints({
     }),
 
     payment: builder.mutation({
-      query: () => ({
+      query: (data) => ({
         url: "/orders/payment/create-payment-intent",
         method: "POST",
-        
+        body: data,
       }),
     }),
   }),

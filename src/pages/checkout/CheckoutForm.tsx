@@ -61,21 +61,21 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="bg-gray-200 w-[50%] mx-auto  pb-4 my-8 rounded-lg">
+    <div className="bg-gray-200 w-[90%] lg:w-[50%] mx-auto  pb-4 my-8 rounded-lg">
       <h1 className="mb-2 text-2xl font-bold text-center text-gray-700">
         Order Form
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="">
         {/* Customer name and email and brand row */}
-        <div className="flex justify-center items-center gap-8">
-          <div className="flex flex-col gap-1">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+          <div className="flex flex-col  gap-1">
             <label className="" htmlFor="customer">
               Customer Name
             </label>
             <input
               defaultValue={customer?.data[0].name}
               type="text"
-              className="px-2 py-1 w-72 rounded-lg "
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg "
               id="customer"
               {...register("customer")}
             />
@@ -86,14 +86,14 @@ const CheckoutForm = () => {
             <input
               defaultValue={customer?.data[0].email}
               type="text"
-              className="px-2 py-1 w-72 rounded-lg"
+              className="px-2 py-1  w-80 lg:w-72 rounded-lg"
               id="email"
               {...register("email")}
             />
           </div>
         </div>
         {/* product name and brand */}
-        <div className="flex justify-center items-center gap-8 mt-2">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2">
           <div className="flex flex-col gap-1">
             <label className="" htmlFor="name">
               Product Name
@@ -101,7 +101,7 @@ const CheckoutForm = () => {
             <input
               defaultValue={bicycle?.data.name}
               type="text"
-              className="px-2 py-1 w-72 rounded-lg "
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg "
               id="name"
               {...register("name")}
             />
@@ -112,7 +112,7 @@ const CheckoutForm = () => {
             <input
               defaultValue={bicycle?.data.brand}
               type="text"
-              className="px-2 py-1 w-72 rounded-lg"
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg"
               id="brand"
               {...register("brand")}
             />
@@ -121,7 +121,7 @@ const CheckoutForm = () => {
 
         {/*model and type */}
 
-        <div className="flex justify-center items-center gap-8 mt-2">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2">
           <div className="flex flex-col gap-1">
             <label className="" htmlFor="model">
               Model
@@ -129,7 +129,7 @@ const CheckoutForm = () => {
             <input
               defaultValue={bicycle?.data.model}
               type="text"
-              className="px-2 py-1 w-72 rounded-lg "
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg "
               id="model"
               {...register("model")}
             />
@@ -140,7 +140,7 @@ const CheckoutForm = () => {
             <input
               defaultValue={bicycle?.data.type}
               type="text"
-              className="px-2 py-1 w-72 rounded-lg"
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg"
               id="type"
               {...register("type")}
             />
@@ -149,7 +149,7 @@ const CheckoutForm = () => {
 
         {/* price and quantity row */}
 
-        <div className="flex justify-center items-center gap-8 mt-2">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2">
           <div className="flex flex-col gap-1">
             <label className="" htmlFor="price">
               Price $
@@ -157,7 +157,7 @@ const CheckoutForm = () => {
             <input
               defaultValue={bicycle?.data.price}
               type="number"
-              className="px-2 py-1 w-72 rounded-lg"
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg"
               id="price"
               {...register("price")}
             />
@@ -168,7 +168,7 @@ const CheckoutForm = () => {
             <input
               defaultValue={1}
               type="number"
-              className="px-2 py-1 w-72 rounded-lg"
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg"
               id="quantity"
               {...register("quantity")}
             />
@@ -177,12 +177,12 @@ const CheckoutForm = () => {
 
         {/* type and model row */}
 
-        <div className="flex justify-center items-center gap-8 mt-2">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2">
           <div className="flex flex-col gap-1">
             <label htmlFor="totalPrice">Total value</label>
             <input
               type="number"
-              className="px-2 py-1 w-72 rounded-lg"
+              className="px-2 py-1 w-80 lg:w-72 rounded-lg"
               id="totalPrice"
               value={price}
               {...register("totalPrice")}
@@ -191,7 +191,7 @@ const CheckoutForm = () => {
           </div>
 
           <button
-            className=" bg-[#316881]  py-1 rounded-lg w-72  border-none text-white  mt-6 hover:bg-[#0d4763] "
+            className=" bg-[#316881]  py-1 rounded-lg w-full lg:w-72  border-none text-white  mt-6 hover:bg-[#0d4763] "
             type="submit"
           >
             submit

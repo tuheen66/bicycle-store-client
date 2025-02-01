@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRegisterUserMutation } from "../../redux/features/auth/user/userApi";
 import { toast } from "sonner";
 import { useState } from "react";
@@ -23,6 +23,8 @@ export type TResponse<T> = {
 };
 
 const Register = () => {
+
+  const navigate=useNavigate()
   const { register, handleSubmit } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -52,6 +54,7 @@ const Register = () => {
         toast.error(res.error.data.message, { id: toastId });
       } else {
         toast.success("User Registered", { id: toastId });
+        navigate('/login')
       }
     } catch (err) {
       toast.error("Something went wrong", { id: toastId });
@@ -63,7 +66,7 @@ const Register = () => {
       {/* <Helmet>
         <title>Heartsync | Register</title>
       </Helmet> */}
-      <div className=" lg:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
+      <div className=" md:w-[70%] lg:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
         <h2 className="text-center text-3xl font-bold">Please Register</h2>
 
         <form

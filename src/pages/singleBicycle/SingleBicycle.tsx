@@ -18,7 +18,7 @@ const SingleBicycle = () => {
         <h2 className="text-3xl text-center font-bold">{bicycle.data.name}</h2>
       </div>
 
-      <div className="flex  ">
+      <div className="flex flex-col lg:flex-row  ">
         <div className="m-8 flex-1">
           <img
             className="shadow-xl shadow-gray-300 rounded-xl"

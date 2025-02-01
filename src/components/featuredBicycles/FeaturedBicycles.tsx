@@ -31,7 +31,7 @@ const FeaturedBicycles = () => {
       <h2 className="text-center mb-8 text-3xl font-semibold">
         Featured Bicycles
       </h2>
-      <div className="w-[90%] mx-auto grid grid-cols-3 gap-8">
+      <div className="w-[90%] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredBicycles.map((item: TBicycle) => (
           <BicycleCard key={item._id} item={item}></BicycleCard>
         ))}

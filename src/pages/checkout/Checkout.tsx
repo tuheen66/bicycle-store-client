@@ -8,7 +8,7 @@ const stripePromise = loadStripe(
 
 const Checkout = () => {
   return (
-    <div className="my-12 w-[45%] mx-auto bg-gray-200 p-4 rounded-xl">
+    <div className="my-12 w-[90%] lg:w-[45%] mx-auto bg-gray-200 p-4 rounded-xl">
       <Elements stripe={stripePromise}>
         <PaymentForm />
       </Elements>

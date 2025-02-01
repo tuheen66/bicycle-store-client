@@ -64,14 +64,7 @@ const AllBicycles = () => {
       </div>
       <h2 className="text-center text-3xl font-semibold my-8">All Bicycles</h2>
 
-      <div className="w-[90%] mx-auto bg-gray-300 p-4 flex justify-center gap-4 rounded-lg">
-        <input
-          type="text"
-          placeholder="Search by name, brand, or model"
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="p-2 border rounded-lg  "
-        />
+      <div className="w-[90%] mx-auto bg-gray-300 p-4 grid md:grid-cols-2 lg:grid-cols-4 justify-center gap-4 rounded-lg">
         <input
           type="number"
           placeholder="Min Price"
@@ -87,17 +80,25 @@ const AllBicycles = () => {
           className="p-2 border rounded-lg"
         />
 
+        <input
+          type="text"
+          placeholder="Search by name, brand, or model"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="p-2 border rounded-lg  "
+        />
+
         <select
           value={sortOrder}
           onChange={handleSortOrderChange}
-          className="p-2 border rounded-lg"
+          className="p-2 border rounded-lg text-gray-500"
         >
           <option value="asc">Price: Low to High</option>
           <option value="desc">Price: High to Low</option>
         </select>
       </div>
 
-      <div className="grid grid-cols-3 gap-12 w-[90%] mx-auto mt-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 w-[90%] mx-auto mt-8">
         {filteredBicycles?.map((item: TBicycle) => (
           <BicycleCard key={item._id} item={item}></BicycleCard>
         ))}

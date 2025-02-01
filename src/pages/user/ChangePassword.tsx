@@ -24,7 +24,7 @@ const ChangePassword = () => {
 
   return (
     <div className="w-[90%] mx-auto">
-      <div className=" lg:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
+      <div className=" md:w-[50%] bg-gray-300 p-8  mx-auto text-gray-700 my-8 rounded-lg">
         <h2 className="text-center text-3xl font-bold">Update Password</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="form-action">

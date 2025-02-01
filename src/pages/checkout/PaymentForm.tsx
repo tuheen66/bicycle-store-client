@@ -39,9 +39,9 @@ const PaymentForm = () => {
     const createPaymentIntent = async () => {
       if (price > 0) {
         try {
-          const res = await payment({ amount: price }).unwrap();
-          console.log(res.clientSecret);
-          setClientSecret(res.clientSecret);
+          const res = await payment({ totalPrice: price }).unwrap();
+          setClientSecret((res.data.clientSecret) as string);
+          console.log(res.data.clientSecret);
         } catch (err) {
           console.error("Error getting client secret:", err);
           setError("Failed to initialize payment. Please try again.");
@@ -51,6 +51,8 @@ const PaymentForm = () => {
 
     createPaymentIntent();
   }, [price, payment]);
+
+  
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
@@ -91,7 +93,7 @@ const PaymentForm = () => {
           >
             Your card details
           </label>
-          <CardElement
+          <CardElement 
             options={{
               style: {
                 base: {
