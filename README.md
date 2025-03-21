@@ -19,11 +19,6 @@ In addition to those I installed -
 * ts-node-dev - to run the server every time the code is updated
 
 
-## The project has a database named blog-project and has two collections - blogs and users.
-
-
-
-
 ## How it works:
 
 The project has frontend and backend
@@ -37,6 +32,8 @@ The project has frontend and backend
 7. Admin can see all the users, can block any user's account.
 8. Admin can see all the orders placed. can delete any order.
 9. Admin can create product and update price and quantity and delete any order.
+
+
 
 
 
